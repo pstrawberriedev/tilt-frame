@@ -1,0 +1,130 @@
+/* tilt.scss */
+/* Tilt + Kirby / 0.1 */
+
+@import 'rules';
+
+// Structural
+//----------------
+html {
+	background:#000 url('../images/bg.jpg') no-repeat center center;
+	@include background-size(cover);
+    background-attachment:fixed;
+}
+#content-master {
+    padding-top:3rem;
+}
+img { 
+    max-width:100%;
+    height:auto;
+}
+
+
+// Headers
+//----------------
+
+//Page Title
+.title-master {
+	margin-bottom:0.6rem;
+    cursor:pointer;
+}
+
+//Navigation
+
+#head-master {
+	position:relative;
+	
+	.slide {position:absolute; height:auto;}
+	ul {
+        border-top:1px solid $font;
+    }
+	li {
+        display:inline-block;
+        margin-right:3rem;
+        position:relative;
+    }
+    ul.parentmenu {
+		position:relative;
+		height:0;
+		overflow:hidden;
+        padding-top:1rem;
+    }
+    ul.submenu {
+		height:0;
+        border-top:none;
+        padding-top:10px;
+            li {
+                display:block;
+            }
+    }
+    li.parent {
+		cursor:pointer;
+		position:relative;
+    }
+	.content {
+		position:relative;
+		overflow:hidden;
+		z-index:3000;
+    }
+    .subcontent {
+        height:0;
+        overflow:hidden;
+		position:absolute;
+		z-index:4000;
+		top:4.5rem;
+			li {
+				background:rgba(255,255,255,.98);
+				border:1px solid #fff;
+				display:block;
+				margin:0 5px;
+				padding:6px 10px;
+				color:#333;
+				width:149%;
+			}
+			a {
+				font-family:$title-font;
+				font-size:0.65em;
+				font-weight:300;
+				text-align:left;
+				text-transform:uppercase;
+			}
+    }
+    #flapper {
+			position:relative;
+			top:1.4rem;
+			font-size:5rem;
+			@include transition(all .2s ease);
+            overflow:hidden;
+            cursor:pointer;
+        }
+    #flopper {
+		position:relative;
+		top:0.3rem;
+        font-size:3rem;
+        padding-left:0;
+        @include transition(all .2s ease);
+        cursor:pointer;
+    }
+}
+#head-master.sticky {position:fixed;} //Make sticky nav
+#nav-master {
+	position:relative;
+	margin-bottom:2rem;
+}
+
+// Heroes
+//----------------
+.hero-master {
+	text-align:center;
+		.title {
+		display:inline-block;
+		border-bottom:1px dotted #f3f3f3;
+		margin-bottom:10rem;
+		}
+		.item {
+			margin-bottom:2rem;
+		}
+}
+
+// Grab Media Queries
+//----------------
+@import 'responsive';

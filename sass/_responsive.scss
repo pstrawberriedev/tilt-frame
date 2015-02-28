@@ -1,0 +1,59 @@
+/* responsive.scss */
+
+// JS Class triggers
+#trigger-js {height:1px; width:3px; position:absolute; bottom:0; right:0; background-color:transparent;}
+@media (max-width:767px) { #trigger-js {width:2px;} }
+@media (max-width:550px) { #trigger-js {width:1px;} }
+@media (max-width:321px) { #trigger-js {width:0px;} }
+
+// Responsive Nav
+@media (max-width:767px) {
+	#head-master {
+		cursor:pointer;
+		ul {
+            position:relative;
+            display:block;
+        }
+        #flapper {
+			position:relative;
+			top:0.8rem;
+			font-size:3rem;
+			@include transition(all .2s ease);
+            overflow:hidden;
+            cursor:pointer;
+        }
+		#flopper {
+			position:relative;
+			font-size:2rem;
+			top:2px;
+		}
+        ul.submenu {
+			overflow:visible;
+            border-top:none;
+            padding:0;
+            margin:0;
+				a {font-weight:300;}
+        }
+		.subcontent {
+			top:0.5rem;
+				a {font-size: 1.1em;}
+				li {width:100%;}
+		}
+	}
+	#nav-master {
+		margin-bottom:1rem;
+	}
+   
+}
+
+// Heroes
+//----------------
+@media (max-width:767px) {
+	.hero-master {
+			.title {
+			margin-bottom:4rem;
+			}
+			.item {
+			}
+	}
+}
