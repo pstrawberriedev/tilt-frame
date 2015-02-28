@@ -1,5 +1,5 @@
 /* tilt.js */
-/* Tilt + Kirby / 0.1 */
+/* Tilt UI */
 
 //
 //	Flowtype.js - https://github.com/simplefocus/FlowType.JS
