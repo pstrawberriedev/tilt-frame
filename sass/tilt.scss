@@ -44,8 +44,8 @@ img {
     }
     ul.parentmenu {
 		position:relative;
-		height:0;
-		overflow:hidden;
+		height:auto;
+		overflow:visible;
         padding-top:1rem;
     }
     ul.submenu {
@@ -71,15 +71,18 @@ img {
 		position:absolute;
 		z-index:4000;
 		top:4.5rem;
+        width:200%;
 			li {
-				background:rgba(255,255,255,.98);
-				border:1px solid #fff;
+				background:rgba(0,0,0,0.95);
+				border:1px solid #111;
+                border-top:0;
 				display:block;
 				margin:0 5px;
 				padding:6px 10px;
-				color:#333;
-				width:149%;
+				color:#fff;
+				width:auto;
 			}
+            li:first-child {border-top:1px solid #111;}
 			a {
 				font-family:$title-font;
 				font-size:0.65em;
@@ -90,7 +93,7 @@ img {
     }
     #flapper {
 			position:relative;
-			top:1.4rem;
+			top:0.8rem;
 			font-size:5rem;
 			@include transition(all .2s ease);
             overflow:hidden;
@@ -98,7 +101,7 @@ img {
         }
     #flopper {
 		position:relative;
-		top:0.3rem;
+		top:0;
         font-size:3rem;
         padding-left:0;
         @include transition(all .2s ease);

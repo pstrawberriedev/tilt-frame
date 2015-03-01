@@ -46,37 +46,79 @@ $(window).resize(function() {
 	
 });
 
+//
+// Dropdown Menu
+//
+/*Count # of subnavs
+function countExpanders() {
+    var testimonialElements = $(".subexpander");
+    for(var i=0; i<testimonialElements.length; i++){
+        var element = testimonialElements.eq(i);
+        var nm = i+1;
+        var fin = "subx-"+ nm;
+        element.addClass(fin);
+    }
+    
+};
+countExpanders();
+*/
+
+//Page title nav
 $(".expander").click(function(){
 	var $this = $(this),
 	$content = $(".slide").find(".content");
 	
-	if(!$this.hasClass("closed")){
-		TweenLite.to($content, 0.2, {height:0})
-		$this.addClass("closed");
-		$content.css('overflow', 'hidden');
-        $("span#flapper").removeClass("fa-flip-vertical");
-	} else {
-		TweenLite.set($content, {height:"auto"})
-		TweenLite.from($content, 0.2, {height:0})
-		$this.removeClass("closed");
-		$content.css('overflow', 'visible');
-        $("span#flapper").addClass("fa-flip-vertical");
-	}
+    function closeExpander() {
+            $("span#flapper").addClass("fa-rotate-270");
+        if(!$this.hasClass("closed")){
+            TweenLite.to($content, 0.2, {height:0, overflow:'hidden'})
+            $this.addClass("closed");
+            $("span#flapper").addClass("fa-rotate-270");
+        } else {
+            TweenLite.set($content, {height:"auto", overflow:'visible'})
+            TweenLite.from($content, 0.2, {height:0, overflow:'hidden'})
+            $this.removeClass("closed");
+            $("span#flapper").removeClass("fa-rotate-270");
+        }
+    };
+    closeExpander();
 });
 
-$(".subexpander").click(function(){
+//Subnavs
+$(".subexpander").click(function(event){
 	var $this = $(this),
 	$content = $this.parent().parent().find(".subcontent");
-	if(!$this.hasClass("closed")){
-		TweenLite.to($content, 0.2, {height:0})
-		$(this).addClass("closed");
-		$content.css('overflow', 'hidden');
-		$this.parent().parent().find("span#flopper").removeClass("fa-flip-vertical");
-	} else {
-		TweenLite.set($content, {height:"auto"})
-		TweenLite.from($content, 0.2, {height:0})
-		$(this).removeClass("closed");
-		$content.css('overflow', 'visible');
-		$this.parent().parent().find("span#flopper").addClass("fa-flip-vertical");
-	}
+    
+    //Close any open subs first
+    if(!$this.hasClass("open")) {
+        TweenLite.to($('.subexpander.open').parent().parent().find(".subcontent"), 0.2, {height:0, overflow:'hidden'})
+        $('.subexpander').addClass("closed");
+        $('.subexpander').removeClass("open");
+        $('.subexpander').parent().parent().find("span#flopper").removeClass("fa-rotate-90");
+    }
+    
+    //Do regular subnav things
+    if(!$this.hasClass("closed")){
+        TweenLite.to($content, 0.2, {height:0, overflow:'hidden'})
+        $(this).addClass("closed");
+        $(this).removeClass("open");
+        $this.parent().parent().find("span#flopper").removeClass("fa-rotate-90");
+    } else {
+        TweenLite.set($content, {height:"auto", overflow:'visible'})
+        TweenLite.from($content, 0.2, {height:0, overflow:'hidden'})
+        $(this).removeClass("closed");
+        $(this).addClass("open");
+        $this.parent().parent().find("span#flopper").addClass("fa-rotate-90");
+    }
+
 });
+//Close subnavs on elements other than themselves
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('.subexpander.open').length) {
+    TweenLite.to($('.subcontent'), 0.2, {height:0, overflow:'hidden'})
+    $('.subexpander').addClass("closed");
+    $('.subexpander').removeClass("open");
+    $("span#flopper").removeClass("fa-rotate-90");
+  }
+});
+
