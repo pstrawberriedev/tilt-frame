@@ -11,13 +11,44 @@ html {
     background-attachment:fixed;
 }
 #content-master {
-    padding-top:3rem;
+    padding-top:5rem;
 }
 img { 
     max-width:100%;
     height:auto;
 }
 
+// // // // // // //  // //
+// Tilt Bottom
+// // // // // // //  // //
+// Rules:
+//    -only apply to last element of body, before footer
+/*
+<html>
+    <head>
+    </head>
+    <body>
+        <header>
+        </header>
+
+        <container>
+        </container>
+
+        <container>
+        </container>
+
+        <tilt-bottom>
+        </tilt-bottom>
+
+        <footer>
+        </footer>
+    </body>
+</html>
+*/
+
+.tilt-bottom {
+    
+}
 
 // Headers
 //----------------

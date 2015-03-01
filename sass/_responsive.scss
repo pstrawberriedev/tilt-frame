@@ -1,6 +1,7 @@
 /* responsive.scss */
 
 // JS Class triggers
+
 #trigger-js {height:1px; width:3px; position:absolute; bottom:0; right:0; background-color:transparent;}
 @media (max-width:767px) { #trigger-js {width:2px;} }
 @media (max-width:550px) { #trigger-js {width:1px;} }

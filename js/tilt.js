@@ -69,16 +69,16 @@ $(".expander").click(function(){
 	$content = $(".slide").find(".content");
 	
     function closeExpander() {
-            $("span#flapper").addClass("fa-rotate-270");
+            $("span#flapper").addClass("fa-flip-horizontal");
         if(!$this.hasClass("closed")){
             TweenLite.to($content, 0.2, {height:0, overflow:'hidden'})
             $this.addClass("closed");
-            $("span#flapper").addClass("fa-rotate-270");
+            $("span#flapper").addClass("fa-flip-horizontal");
         } else {
             TweenLite.set($content, {height:"auto", overflow:'visible'})
             TweenLite.from($content, 0.2, {height:0, overflow:'hidden'})
             $this.removeClass("closed");
-            $("span#flapper").removeClass("fa-rotate-270");
+            $("span#flapper").removeClass("fa-flip-horizontal");
         }
     };
     closeExpander();
@@ -122,3 +122,30 @@ $(document).on('click', function(event) {
   }
 });
 
+
+//-----------------------------------------------------------------------------
+//
+//
+// Room For Notes 
+//
+//
+/* Get screen height 
+var w = window.innerWidth
+|| document.documentElement.clientWidth
+|| document.body.clientWidth;
+
+var h = window.innerHeight
+|| document.documentElement.clientHeight
+|| document.body.clientHeight;
+
+var txt = "";
+txt += "<p>innerWidth: " + window.innerWidth + "</p>";
+txt += "<p>innerHeight: " + window.innerHeight + "</p>";
+txt += "<p>outerWidth: " + window.outerWidth + "</p>";
+txt += "<p>outerHeight: " + window.outerHeight + "</p>";
+
+console.log(
+    txt
+);
+*/
+    
