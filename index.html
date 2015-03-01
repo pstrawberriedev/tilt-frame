@@ -27,12 +27,13 @@
     <meta name="msapplication-config" content="/images/fav/browserconfig.xml">
     <meta name="theme-color" content="#44444">
 	<!-- Local CSS  -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/tilt.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/lib/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/lib/prism.css" />
+	<link rel="stylesheet" type="text/css" href="css/tilt.css" rel="stylesheet">
 	
 </head>
-<body>
+<body id="tilted">
 	<!-- Nav Container -->
 	<div class="container-fluid"> <!-- Wrap in col-xs-12 in case we want to make it sticky later -->
 		<div class="row">
@@ -41,7 +42,7 @@
 					<!-- Page Title -->
 					<div class="row" id="title-master">
 						<div class="col-xs-12">
-							<h5 class="title-master expander">tilt/_FRAME &nbsp;<span id="flapper" class="fa fa-folder-o"></span></h5>
+							<h5 class="title-master expander">tilt/_FRAME &nbsp;<span id="flapper" class="fa fa-code"></span></h5>
 						</div>
 					</div>
 					
@@ -100,37 +101,193 @@
 	<!-- Main Content Container-->
 	<div class="container-fluid">
 		<div id="content-master">
-			<div class="hero-master">
-				<div class="row">
-					<h1 class="title">Tilt UI 0.1</h1>
-				</div>
-                <div class="tilt-bottom">
+            <div class="tilt-shift tilt-open">
+                <div class="hero-master">
                     <div class="row">
-                        <div class="col-sm-4 item">
-                            <h1><span class="fa fa-hdd-o"></span></h1>
-                            <h4>Simple <span class="hidden-sm hidden-xs">Interface</span></h4>
+                        <div class="col-xs-12">
+                           <h1 class="title">Tilt UI 0.1</h1>
                         </div>
-                        <div class="col-sm-4 item">
-                            <h1 class="text-align:center;"><span class="fa fa-heart-o"></span></h1>
-                            <h4><span class="hidden-sm hidden-xs">A little</span> Sexy</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h6>A minimal interface inspired by Roboto &amp; the tilt-blur effect.</h6>
+                            <p>This is the hero page. It shows tilt-shift @ tilt-bottom. Browse the pages for more examples.</p>
                         </div>
-                        <div class="col-sm-4 item">
-                            <h1 class="text-align:center;"><span class="fa fa-user"></span></h1>
-                            <h4>Useful<span class="hidden-sm hidden-xs">, too.</span></h4>
-
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <br />
+                            <h6>CSS</h6>
+                            <pre class="language-css"><code class="language-css">
+.this-page {
+    color: #ff00ff;
+    font-size:2em;
+        .rox {
+            color:#fff;
+        }
+    //did wurksz?
+}
+                            </code></pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <br />
+                            <h6>JS</h6>
+                            <pre class="language-javascript"><code class="language-javascript">
+function ding() {
+    var dong = "dingdong";
+    return dong;
+    //did wurks?
+};
+                            </code></pre>
+                        </div>
+                        <div class="col-sm-4">
+                            <br />
+                            <h6>HTML</h6>
+                            <pre class="language-php"><code class="language-php">
+&lt;!DOCTYPE html>
+&lt;html>
+    &lt;head>&lt;/head>
+    &lt;body id="wow">
+        &lt;div class="html">
+            &lt;p>kind of... &lt;/p>
+        &lt;/div>
+    &lt;/body>
+&lt;/html>
+                            </code></pre>
                         </div>
                     </div>
                 </div>
-			</div>
+            </div>
+            <div class="tilt-shift" id="simple">
+                <div class="hero-master">
+                    <div class="row">
+                        <div class="col-xs-12">
+                           <h1 class="title">Simple</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <ul class="tilt-list">
+                                <h5>1 Framework</h5>
+                                <li><span class="fa fa-check"></span> Bootstrap Grid</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul class="tilt-list">
+                                <h5>5 Libraries</h5>
+                                <li><span class="fa fa-check"></span> Font Awesome</li>
+                                <li><span class="fa fa-check"></span> jQuery</li>
+                                <li><span class="fa fa-check"></span> Flowtype</li>
+                                <li><span class="fa fa-check"></span> Prism</li>
+                                <li><span class="fa fa-check"></span> TweenMax (GSAP)</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <ul class="tilt-list">
+                                <h5>5 Technologies</h5>
+                                <li><span class="fa fa-check"></span> HTML</li>
+                                <li><span class="fa fa-check"></span> CSS</li>
+                                <li><span class="fa fa-check"></span> Javascript</li>
+                                <li><span class="fa fa-check"></span> PHP</li>
+                                <li><span class="fa fa-check"></span> MySQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tilt-shift" id="sexy">
+                <div class="hero-master">
+                    <div class="row">
+                        <div class="col-xs-12">
+                           <h1 class="title">Sexy</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5>xoxo</h5>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="image-hero-single">
+                                <img src="images/sexy.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tilt-shift" id="available">
+                <div class="hero-master">
+                    <div class="row">
+                        <div class="col-xs-12">
+                           <h1 class="title">Available</h1>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h5>Clone and run</h5>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-6 col-sm-offset-3">
+                            <a href="https://github.com/pstrawberriedev/tilt-frame" target="_blank">
+                                <p style="text-align:left;">Tilt Frame &nbsp;<span class="fa  fa-github"></span></p>
+                            </a>
+                            <pre class="language-git"><code class="language-git">
+git clone "https://github.com/pstrawberriedev/tilt-frame.git"</code></pre>
+                             <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                         <div class="col-sm-6 col-sm-offset-3">
+                            <a href="https://github.com/pstrawberriedev/godveil-engine" target="_blank">
+                                <p style="text-align:left;">Godveil Engine &nbsp;<span class="fa  fa-github"></span></p>
+                            </a>
+                            <pre class="language-git"><code class="language-git">
+git clone "https://github.com/pstrawberriedev/gv-engine.git"</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
 		</div>
-	</div>		
-	
+	</div>
+    
+    <!-- Tilt-bottom -->
+    
+    <div class="tilt-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <a href="#simple">
+                    <div class="col-xs-4 item">
+                        <h1><span class="fa fa-hdd-o"></span></h1>
+                        <h4>Simple</h4>
+                    </div>
+                </a>
+                <a href="#sexy">
+                    <div class="col-xs-4 item">
+                        <h1 class="text-align:center;"><span class="fa fa-heart-o"></span></h1>
+                        <h4>Sexy</h4>
+                    </div>
+                </a>  
+                <a href="#available">
+                    <div class="col-xs-4 item">
+                        <h1 class="text-align:center;"><span class="fa fa-github-alt"></span></h1>
+                        <h4>Available</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 	<!-- Responsive JS Trigger -->
 	<div id="trigger-js"></div>
 	<!-- Local JS -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/flowtype.js"></script>
-	<script src="js/TweenMax.min.js"></script>
+	<script src="js/lib/jquery.min.js"></script>
+	<script src="js/lib/flowtype.js"></script>
+	<script src="js/lib/TweenMax.min.js"></script>
+    <script src="js/lib/prism.js"></script>
 	<script src="js/tilt.js"></script>
 </body>
 </html>

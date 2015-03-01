@@ -19,36 +19,74 @@ img {
 }
 
 // // // // // // //  // //
+// Tilt Shift
+// // // // // // //  // //
+// Rules:
+/*
+    Use with: tilt-bottom
+    Apply #tilt-shift to element
+*/
+
+.tilt-shift {
+    position:relative;
+    height:0;
+    overflow:hidden;
+}
+.tilt-open {
+    height:auto;
+    overflow:visible;
+}
+
+// // // // // // //  // //
+
+// // // // // // //  // //
 // Tilt Bottom
 // // // // // // //  // //
 // Rules:
-//    -only apply to last element of body, before footer
 /*
-<html>
-    <head>
-    </head>
-    <body>
-        <header>
-        </header>
+    Use with: tilt-bottom
+    Only apply to last element of body, before footer
+/*
+<html><head></head><body>
+    <header>
+    </header>
+    <container>
+    </container>
 
-        <container>
-        </container>
+    <tilt-bottom>
+    </tilt-bottom>
 
-        <container>
-        </container>
-
-        <tilt-bottom>
-        </tilt-bottom>
-
-        <footer>
-        </footer>
-    </body>
-</html>
+    <footer>
+    </footer>
+</body></html>
 */
 
 .tilt-bottom {
-    
+    position:fixed;
+    bottom:0;
+    width:100%;
+    margin-top:5rem;
+    bottom:0;
+    text-align:center;
+    font-size:0.9em;
+    @include transition(all 0.3s ease);
+		.title {
+		display:inline-block;
+		border-bottom:1px dotted #f3f3f3;
+		margin-bottom:10rem;
+		}
+		.item {
+			margin-bottom:2rem;
+		}
 }
+.tilt-bottom.scrolled {
+    font-size:0.6rem;
+    background-color:rgba(0,0,0,0.95);
+    padding-top:1rem;
+}
+
+// // // // // // //  // //
+
 
 // Headers
 //----------------
@@ -148,17 +186,30 @@ img {
 // Heroes
 //----------------
 .hero-master {
+    padding-bottom:10rem;
 	text-align:center;
 		.title {
 		display:inline-block;
 		border-bottom:1px dotted #f3f3f3;
-		margin-bottom:10rem;
+		margin-bottom:3rem;
 		}
 		.item {
 			margin-bottom:2rem;
 		}
+        h6 {margin-bottom:1rem;}
+        p {margin-bottom:20px;}    
+}
+ul.tilt-list
+{display:inline-block; margin:0 auto; text-align:left;
+    h5 {margin-bottom:2rem;}
+    span {font-size:0.7em;}
+}
+.image-hero-single {
+   height:auto;
+    margin-bottom:-10rem;
 }
 
 // Grab Media Queries
 //----------------
+@import 'libcustom';
 @import 'responsive';

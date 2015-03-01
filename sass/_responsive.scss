@@ -55,7 +55,29 @@
 			.title {
 			margin-bottom:4rem;
 			}
-			.item {
-			}
 	}
+    ul.tilt-list {
+        display:block; margin:auto; text-align:center;
+        h5 {margin-bottom:2rem;}
+        span {font-size:0.7em;}
+        margin-bottom:2rem;
+        }
+}
+
+
+@media (max-width:450px) {
+    .tilt-bottom {
+        
+        h4 {font-size:1.5em;}
+    }
+}
+
+// Libraries
+//--------------------
+
+//Prism text size
+@media (max-width:767px) {
+    code[class*="language-"], pre[class*="language-"] {
+        font-size:1em;
+    }
 }

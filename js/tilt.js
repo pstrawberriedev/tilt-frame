@@ -7,18 +7,23 @@
 $('body').flowtype({
    minimum   : 100,
    maximum   : 1800,
-   minFont   : 12,
+   minFont   : 12.5,
    maxFont   : 24,
    fontRatio : 50
 });
 
+
 //
 //	Responsive triggers
 //
+
 var res = "";
 $(document).ready(function() {
-	$(window).trigger('resize');
-});
+    Prism.highlightAll();
+    $(window).trigger('resize');
+    $(window).trigger('scroll'); 
+}
+);
 $(window).resize(function() {
 	// Define
 	var classes = "mobile-low mobile-hr tablet desktop";
@@ -28,40 +33,24 @@ $(window).resize(function() {
 	else if($("#trigger-js").width() == 1) { $("body").removeClass(classes); $("body").addClass("mobile-hr"); res = "low";}
 	else if($("#trigger-js").width() == 0) { $("body").removeClass(classes); $("body").addClass("mobile-low"); res = "low"; }
 	else { $("body").removeClass(classes); $("body").addClass("desktop"); res = "high"; }
-	
-	// Top nav Resize Behavior -- User must check box, need to implement back-end setting
-	/*
-	if ($settings['subMenuDefaultExpand'] == 1) {
-		if(res == "low") {
-			$("#head-master ul.content").css('height', '0');
-			$("#head-master").addClass("closed");
-			$("span#flapper").removeClass("fa-flip-vertical");
-		} else {
-			TweenLite.set($("#head-master ul.content"), {height:"auto"})
-			TweenLite.from($("#head-master ul.content"), 0.1, {height:0})
-			$("#head-master").removeClass("closed");
-			$("span#flapper").addClass("fa-flip-vertical");
-		}
-	}; */
-	
+    
+});
+$(window).scroll(function() {
+// Tilt-bottom detect resize
+    var div= document.getElementById('tilted'); // need real DOM Node, not jQuery wrapper
+    var scrollDetectV= div.scrollHeight>div.clientHeight;
+    var scrollDetectH= div.scrollWidth>div.clientWidth;
+    
+    if(scrollDetectV == 1 || scrollDetectH == 1) {
+        $('.tilt-bottom').addClass("scrolled");
+    } else {
+        $('.tilt-bottom').removeClass("scrolled");
+    }
 });
 
 //
 // Dropdown Menu
 //
-/*Count # of subnavs
-function countExpanders() {
-    var testimonialElements = $(".subexpander");
-    for(var i=0; i<testimonialElements.length; i++){
-        var element = testimonialElements.eq(i);
-        var nm = i+1;
-        var fin = "subx-"+ nm;
-        element.addClass(fin);
-    }
-    
-};
-countExpanders();
-*/
 
 //Page title nav
 $(".expander").click(function(){
@@ -122,13 +111,56 @@ $(document).on('click', function(event) {
   }
 });
 
+//
+// Tilt-Shift + Tilt-Bottom
+//
 
+//Content Swapping Nav
+$('.tilt-bottom a').each(function() {
+    var $this = $(this);
+    var shift = $('.tilt-shift');
+    var top = $('#content-master');
+    var current = $('.tilt-open');
+    
+    $this.click(function(e) {
+        var href = $this.attr("href");
+        var link = href.replace('#','');
+        var fin = $(href);
+        
+        console.log(fin);
+        console.log(current.find(fin));
+        
+        if((fin).hasClass('open')) {
+            return;
+            
+        } else {
+            shift.removeClass('open');
+            TweenLite.to(shift, 0.09, { onComplete:start})
+            function start() {
+                TweenLite.to(shift, 0.2, {height:0, width:0, overflow:'hidden', onComplete:finish})
+            };
+            function finish() {
+                TweenLite.set(top.find(fin), {height:"auto", width:"auto", overflow:'visible'})
+                TweenLite.from(top.find(fin), 0.2, {height:0, width:0, overflow:'hidden'})
+                top.find(fin).addClass('open');
+            };
+        }
+        
+    });
+    
+});
+
+
+
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 //-----------------------------------------------------------------------------
 //
 //
 // Room For Notes 
 //
 //
+
 /* Get screen height 
 var w = window.innerWidth
 || document.documentElement.clientWidth
@@ -147,5 +179,36 @@ txt += "<p>outerHeight: " + window.outerHeight + "</p>";
 console.log(
     txt
 );
+*/
+
+// -------------------
+// Top nav Resize Behavior -- User must check box, need to implement back-end setting
+	/*
+	if ($settings['subMenuDefaultExpand'] == 1) {
+		if(res == "low") {
+			$("#head-master ul.content").css('height', '0');
+			$("#head-master").addClass("closed");
+			$("span#flapper").removeClass("fa-flip-vertical");
+		} else {
+			TweenLite.set($("#head-master ul.content"), {height:"auto"})
+			TweenLite.from($("#head-master ul.content"), 0.1, {height:0})
+			$("#head-master").removeClass("closed");
+			$("span#flapper").addClass("fa-flip-vertical");
+		}
+	}; */
+
+// -------------------
+/*Count # of subnavs
+function countExpanders() {
+    var testimonialElements = $(".subexpander");
+    for(var i=0; i<testimonialElements.length; i++){
+        var element = testimonialElements.eq(i);
+        var nm = i+1;
+        var fin = "subx-"+ nm;
+        element.addClass(fin);
+    }
+    
+};
+countExpanders();
 */
     
