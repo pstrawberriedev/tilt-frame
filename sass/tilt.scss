@@ -210,6 +210,41 @@ ul.tilt-list
     border-bottom:3px dotted #f0f0f0;
 }
 
+// Forms
+//----------------
+.form-master {
+		h1, h5 {text-align:center;}
+		h5 {border-bottom:1px solid #222;}
+		.title {margin-bottom:3rem;}
+		.section {
+			border:1px solid #111;
+			padding:2rem;
+			background-color:rgba(0,0,0,0.8);
+		}
+		input {
+			width:100%;
+			background:none;
+			background-color:transparent;
+			outline:none;
+			select:none;
+			border:1px solid #f3f3f3;
+			padding:1rem;
+			font-size:1em;
+		}
+		label {display:block;}
+		.item {
+			margin-bottom:1.2rem;
+		}
+		textarea {
+			width:100%;
+			display:table;
+			margin:0 auto;
+			min-height:150px;
+			background-color:rgba(255,255,255,0.5);
+			outline:0;
+		}
+}
+
 // Grab Media Queries
 //----------------
 @import 'libcustom';
