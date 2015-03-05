@@ -105,7 +105,7 @@
                 <div class="form-master">
                     <div class="row">
                         <div class="col-xs-12">
-                           <h1 class="title">Profile Form</h1>
+                           <h2 class="title">Profile Form</h2>
                         </div>
                     </div>
                 </div>
@@ -114,14 +114,14 @@
                 <div class="form-master">
                     <div class="row">
                         <div class="col-xs-12">
-                           <h1 class="title">Registration Form</h1>
+                           <h2 class="title">Register New Account</h2>
                         </div>
                     </div>
 					<div class="row">
-						<form name="registration" id="registration-form">
-							<div class="col-xs-4">
+						<form name="registration" id="registration-form" method="post">
+							<div class="col-sm-4">
 								<div class="section">
-									<h5>Basic Info</h5>
+									<h5>Basic Info <span class="fa fa-close"></span></h5>
 									<div class="item">
 										<label for="username">Username:</label>
 										<input type="text" name="username" id="username" />
@@ -140,25 +140,30 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-4">
+							<div class="col-sm-4">
 								<div class="section">
-									<h5>Location</h5>
+									<h5>Location <span class="fa fa-close"></span></h5>
 									<div class="item">
 										<label for="country">Country:</label>
 										<input type="text" name="country" id="country" />
+									</div>
+									<div class="item">
 										<label for="state">State/Province:</label>
 										<input type="text" name="state" id="state" />
 									</div>
 								</div>
 							</div>
-							<div class="col-xs-4">
+							<div class="col-sm-4">
 								<div class="section">
-									<h5>Details</h5>
+									<h5>Details <span class="fa fa-check"></span></h5>
 									<div class="item">
 										<label for="bio">Bio:</label>
 										<textarea name="bio" id="bio"></textarea>
 									</div>
 								</div>
+							</div>
+							<div class="col-xs-12">
+								<input type="submit" name="register" id="register" value="Register Account" />
 							</div>
 						</form>
                     </div>
