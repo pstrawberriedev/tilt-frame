@@ -309,10 +309,10 @@ ul.tilt-list {
     padding: 2rem;
     background-color: rgba(0, 0, 0, 0.8); }
   .form-master input {
-    -webkit-transition: all 0.6s ease;
-    -moz-transition: all 0.6s ease;
-    -o-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
     width: 100%;
     background: none;
     background-color: transparent;
@@ -347,7 +347,7 @@ ul.tilt-list {
     padding: 2rem 0;
     font-size: 2em;
     font-weight: 300; }
-  .form-master input[type=submit]:hover {
+  .form-master input[type=submit]:hover, .form-master input[type=submit]:active {
     background-color: rgba(0, 0, 0, 0.8);
     color: #f3f3f3; }
   .form-master .fa-check {

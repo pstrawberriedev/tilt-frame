@@ -101,15 +101,7 @@
 	<!-- Main Content Container-->
 	<div class="container-fluid">
 		<div id="content-master">
-            <div class="tilt-shift" id="profile">
-                <div class="form-master">
-                    <div class="row">
-                        <div class="col-xs-12">
-                           <h2 class="title">Profile Form</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+			<!-- Registration Form -->
 			<div class="tilt-shift tilt-open" id="registration">
                 <div class="form-master">
                     <div class="row">
@@ -142,7 +134,7 @@
 							</div>
 							<div class="col-sm-4">
 								<div class="section">
-									<h5>Location <span class="fa fa-close"></span></h5>
+									<h5>Location <span class="fa fa-check"></span></h5>
 									<div class="item">
 										<label for="country">Country:</label>
 										<input type="text" name="country" id="country" />
@@ -169,6 +161,39 @@
                     </div>
                 </div>
             </div>
+			<!-- Login Form -->
+			<div class="tilt-shift" id="login">
+                <div class="form-master">
+                    <div class="row">
+                        <div class="col-xs-12">
+                           <h2 class="title">Log in</h2>
+                        </div>
+                    </div>
+					<div class="row">
+						<form name="registration" id="registration-form" method="post">
+							<div class="col-sm-6 col-sm-offset-3">
+								<div class="section">
+									<h5>Username <span class="fa fa-close"></span></h5>
+									<div class="item">
+										<input type="text" name="username" id="username" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-sm-offset-3">
+								<div class="section">
+									<h5>Password</h5>
+									<div class="item">
+										<input type="password" name="password" id="password" />
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-6 col-sm-offset-3">
+								<input type="submit" name="login" id="login" value="Log in" />
+							</div>
+						</form>
+                    </div>
+                </div>
+            </div>
 		</div>
 	</div>
     
@@ -183,10 +208,10 @@
                         <h4>Registration</h4>
                     </div>
                 </a>
-				<a href="#profile">
+				<a href="#login">
                     <div class="col-xs-6 item">
                         <h1><span class="fa fa-clipboard"></span></h1>
-                        <h4>Profile</h4>
+                        <h4>Login</h4>
                     </div>
                 </a>
 				<!--

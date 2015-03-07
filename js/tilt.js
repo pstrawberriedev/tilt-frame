@@ -127,9 +127,6 @@ $('.tilt-bottom a').each(function() {
         var link = href.replace('#','');
         var fin = $(href);
         
-        console.log(fin);
-        console.log(current.find(fin));
-        
         if((fin).hasClass('open')) {
             return;
             
